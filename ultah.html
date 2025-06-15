@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FallSkie. | Profile</title>
+    <link rel="stylesheet" href="ultah.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Tambahkan pointer cursor ke baris lagu yang interaktif */
+        .playable {
+            cursor: pointer;
+        }
+
+        /* Tambahkan efek hover agar kelihatan bisa diklik */
+        .playable:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header class="profile-header">
+        <img src="cee green cut.png" alt="Profile Picture" class="profile-pic">
+        <div class="profile-info">
+            <p class="profile-label">Profile</p>
+            <h1 class="profile-name">Gisella<span class="dot">.</span></h1>
+            <p class="profile-meta">14 Public Playlists • 6 Followers • 2009 Following</p>
+        </div>
+    </header>
+
+    <main>
+        <button class="follow-btn">Follow</button>
+        
+        <h2 class="section-title">Public Playlists</h2>
+        <div class="playlist-grid">
+           <div class="playlist-card">
+                <a href="password.html">
+                    <img src="ceeee cut.png" alt="Gisella Playlist">
+                </a>
+                <p class="playlist-title">1. About Gisella</p>
+                <p class="playlist-author">By FallSkie.</p>
+            </div>
+            <div class="playlist-card">
+                <a href="password2.html">
+                    <img src="on the radar.png" alt="on the radar cover">
+                </a>
+                <p class="playlist-title">2. Pencet ini ya manis</p>
+                <p class="playlist-author">By Concrete Boys</p>
+            </div>
+        </div>
+    </main>
+
+    <br><br>
+
+    <!-- Play dan list lagu fav -->
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Lagu Favorite Gisella</th>
+                    <th>Album</th>
+                    <th class="right">⏱</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="playable" data-url="ultah2.html">
+                    <td>1</td>
+                    <td class="song-info">
+                        <img src="Screenshot 2025-05-29 103252.png" alt="Mabagal">
+                        <div>
+                            <p class="title">Mabagal</p>
+                            <p class="artist">Moira Della Torre</p>
+                        </div>
+                    </td>
+                    <td>Gisellaa</td>
+                    <td class="right">5:04</td>
+                </tr>
+                <tr class="playable" data-url="ultah3.html">
+                    <td>2</td>
+                    <td class="song-info">
+                        <img src="on the radar.png" alt="Concrete Boys">
+                        <div>
+                            <p class="title">On The Radar Concrete Typher</p>
+                            <p class="artist">Concrete Boys</p>
+                        </div>
+                    </td>
+                    <td>gisellllll</td>
+                    <td class="right">10:13</td>
+                </tr>
+                <tr class="playable" data-url="ultah4.html">
+                    <td>3</td>
+                    <td class="song-info">
+                        <img src="Hell N Back.png" alt="Hell N Back">
+                        <div>
+                            <p class="title">Hell N Back</p>
+                            <p class="artist">Bakar, Summer Walker</p>
+                        </div>
+                    </td>
+                    <td>Skeooz...</td>
+                    <td class="right">4:14</td>
+                </tr>
+                <tr class="playable" data-url="ultah5.html">
+                    <td>4</td>
+                    <td class="song-info">
+                        <img src="All the stars.png" alt="All The Stars">
+                        <div>
+                            <p class="title">All The Stars (With SZA)</p>
+                            <p class="artist">Kendrick Lamar, SZA</p>
+                        </div>
+                    </td>
+                    <td>Loraineee</td>
+                    <td class="right">3:51</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+        // buat nge play laguu nyeni
+        const playableRows = document.querySelectorAll('.playable');
+        playableRows.forEach(row => {
+            row.addEventListener('click', () => {
+                const url = row.getAttribute('data-url');
+                window.location.href = url;
+            });
+        });
+
+
+    </script>
+</body>
+</html>

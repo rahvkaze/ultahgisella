@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gift?</title>
+  <link rel="stylesheet" href="giftMeme0.css" />
+</head>
+<body>
+  <div class="container">
+    <img src="letmisii.jpeg" alt="Let mi sii" class="meme-img" />
+    <p class="error-text">EROR 404</p>
+
+    <img src="Bakekok.jpeg" alt="Bakekok" class="meme-img" />
+    <p class="info-text">Ada kendala teknis nih, kayaknya hadiah kamu di halaman berikutnya deh..</p>
+
+    <button onclick="showPopup()">Lihat Hadiah</button>
+  </div>
+
+  <!-- Popup -->
+  <div id="popup" class="popup hidden">
+    <div class="popup-box">
+      <h2>Kamu beneran Gisella kan?</h2>
+      <p>soalnya gift ini aku buat sepenuh hati hanya untuk Gisella Loraine saja.</p>
+      <hr />
+      <div class="popup-buttons">
+        <button class="no-btn" onclick="hidePopup()">Engga</button>
+        <button class="yes-btn" onclick="goToNext()">Iyaa</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showPopup() {
+      document.getElementById("popup").classList.remove("hidden");
+    }
+
+    function hidePopup() {
+      document.getElementById("popup").classList.add("hidden");
+    }
+
+    function goToNext() {
+      window.location.href = "giftMeme1.html"; // ganti ke file prank selanjutnya
+    }
+  </script>
+</body>
+</html>

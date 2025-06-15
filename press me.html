@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulasi Notifikasi</title>
+  <link rel="stylesheet" href="press me.css" />
+</head>
+<body>
+
+<a href="javascript:history.back()" class="back-button">⬅ Kembali</a>
+
+  
+  <!-- Notifikasi awal -->
+  <div class="notification" onclick="showAlert()">
+    <img src="profille.png" alt="foto" />
+    <div class="text">
+      <strong>Melvinnn</strong>
+      <p>Aku ada gift nih untuk kamu!</p>
+    </div>
+    <span class="time">6:09 AM</span>
+  </div>
+
+  <!-- Alert Box (sembunyi dulu) -->
+  <div class="alert-box" id="alertBox">
+    <h3>Yakin Buka Gift Dari Aku</h3>
+    <p>Gift ini mungkin berisi berbahaya!</p>
+    <div class="actions">
+      <a href="press me.html">Engga</a>
+      <!-- <a href="#">Iyaa</a>  PAKE INI ATAU BWHNYA -->
+       <a href="#" onclick="window.location.href='giftMeme0.html'">Iyaa</a>
+
+    </div>
+  </div>
+
+  <script>
+    function showAlert() {
+  const box = document.getElementById("alertBox");
+  box.classList.add("show");
+}
+
+    
+  
+
+
+  </script>
+</body>
+</html>

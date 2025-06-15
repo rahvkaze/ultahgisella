@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>You’ve Got a Mail</title>
+  <style>
+    /* Reset & Body */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('begron real mail.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Amplop wrapper */
+    .mail-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      cursor: pointer;
+    }
+
+    .envelope {
+      width: 100%;
+      z-index: 1;
+      display: block;
+    }
+
+    /* Polaroid */
+    .polaroid {
+      position: absolute;
+      top: -40px;
+      left: 100px;
+      transform: rotate(8deg);
+      width: 120px;
+      z-index: 2;
+    }
+
+    .polaroid img {
+      width: 100%;
+      border: 10px solid white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Kertas surat */
+    .paper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.6s ease;
+      z-index: 3;
+    }
+
+    .paper img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .show-paper {
+      opacity: 1;
+      transform: translateY(-150px) scale(1);
+    }
+
+    /* Tombol fixed di bawah */
+    #nextPageBtn {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #6a5acd;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: none;
+      z-index: 99;
+    }
+
+    #nextPageBtn:hover {
+      background-color: #483d8b;
+    }
+
+    /* Responsif */
+    @media (max-width: 480px) {
+      .mail-wrapper {
+        width: 90%;
+      }
+
+      .polaroid {
+        width: 90px;
+        left: 60%;
+      }
+
+      .paper img {
+        border-radius: 8px;
+      }
+
+      #nextPageBtn {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  
+
+
+  <!-- Amplop & Foto -->
+  <div class="mail-wrapper" onclick="showPaper()">
+    <img src="foto surat mail.png" alt="Amplop" class="envelope" />
+
+    <div class="paper" id="paper">
+      <img src="paper mail.png" alt="Surat Ulang Tahun" />
+    </div>
+
+    <div class="polaroid">
+      <img src="foto miror mail.png" alt="Foto" />
+    </div>
+  </div>
+
+  <!-- Tombol Next Page -->
+  <button id="nextPageBtn" onclick="goToNextPage()">Next Page</button>
+
+  <!-- Script -->
+  <script>
+    function showPaper() {
+      const paper = document.getElementById('paper');
+      const nextBtn = document.getElementById('nextPageBtn');
+
+      paper.classList.toggle('show-paper');
+
+      if (paper.classList.contains('show-paper')) {
+        nextBtn.style.display = 'block';
+      } else {
+        nextBtn.style.display = 'none';
+      }
+    }
+
+    function goToNextPage() {
+      window.location.href = 'cluenomor2.html'; // Ganti ke halaman kamu
+    }
+  </script>
+</body>
+</html>

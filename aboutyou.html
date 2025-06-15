@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scrapbook Gisel</title>
+  <link rel="stylesheet" href="aboutyou.css" />
+</head>
+<body>
+
+
+  <a href="javascript:history.back()" class="back-button">⬅ Kembali</a>
+
+
+  <div class="scrapbook-container">
+    <!-- Semua scrapbook image sections -->
+    <div class="scrapbook">
+      <img src="about you + foto.png" alt="About You" class="scrapbook-photo" />
+    </div>
+
+    <div class="scrapbook">
+      <img src="still about u, sec 2.png" alt="About Gisel" class="scrapbook-photo" />
+    </div>
+
+    <div class="scrapbook">
+      <img src="note fav song.png" alt="Favorite Song Note" class="scrapbook-photo" width="80%" />
+    </div>
+  </div>
+
+  <!-- Music Player di luar scrapbook -->
+  <div class="container">
+    <div class="music-player">
+      <h3>Top 1</h3>
+      <div class="album-art">
+        <img src="Screenshot 2025-05-29 103252.png" alt="Patawad Album Cover" />
+      </div>
+      <div class="player-info">
+        <div class="info">
+          <h2>Mabagal</h2>
+          <p>Moira Dela Torre, Daniel Padilla</p>
+        </div>
+        <div class="progress">
+          <span>0:00</span>
+          <input type="range" min="0" max="100" value="25">
+          <span>3:47</span>
+        </div>
+        <div class="controls">
+          <button>&laquo;</button>
+          <button class="play">&#9658;</button>
+          <button>&raquo;</button>
+        </div>
+        <div class="volume">
+          <input type="range" min="0" max="100" value="70">
+        </div>
+        <div class="device">
+          <p>📱 iPhone</p>
+        </div>
+        <audio id="audio-player" src="Daniel Padilla & Moira Dela Torre - Mabagal (Lyric Video).mp4"></audio>
+      </div>
+    </div>
+  </div>
+
+  <div class="scrapbook-container">
+    <div class="scrapbook">
+      <img src="this is ur fav song.png" alt="Favorite Song List" class="scrapbook-photo" width="80%" />
+    </div>
+
+    <!-- Lanjutkan gambar lainnya... -->
+    <div class="scrapbook">
+      <img src="my hope.png" class="scrapbook-photo" />
+    </div>
+    <div class="scrapbook">
+      <img src="notes.png" class="scrapbook-photo" />
+    </div>
+    <hr class="custom-divider" />
+    <div class="scrapbook">
+      <img src="about mee.png" class="scrapbook-photo" />
+    
+    
+    <!-- Tombol Next Page -->
+<div class="scrapbook">
+  <a href="halaman-selanjutnya.html">
+    <img src="lebih lengkap asli.png" class="scrapbook-photo next-button" alt="Next Page" />
+  </a>
+</div>
+
+<!-- Gambar "I Have a Gift" -->
+<div class="scrapbook">
+  <img src="btw i have a gift.png" class="scrapbook-photo" alt="I Have a Gift" />
+</div>
+
+<!-- Tombol Menuju Hadiah -->
+<div class="scrapbook">
+  <a href="press me.html">
+    <img src="press me asli.png" class="scrapbook-photo" alt="Tekan Aku" />
+  </a>
+</div>
+
+
+  <!-- Script -->
+  <script>
+    const audio = document.getElementById("audio-player");
+    const playBtn = document.querySelector(".play");
+
+    playBtn.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        playBtn.innerHTML = "❚❚";
+      } else {
+        audio.pause();
+        playBtn.innerHTML = "▶";
+      }
+    });
+
+    const playableRows = document.querySelectorAll('.playable');
+    playableRows.forEach(row => {
+      row.addEventListener('click', () => {
+        const url = row.getAttribute('data-url');
+        window.location.href = url;
+      });
+    });
+  </script>
+
+
+
+
+
+<!-- Modal dengan Tombol Next/Prev -->
+<div id="popupModal" class="modal">
+  <div class="modal-inner">
+    <button id="prevBtn" class="nav-btn">&#10094;</button>
+    <img class="modal-content" id="popupImage" src="">
+    <button id="nextBtn" class="nav-btn">&#10095;</button>
+  </div>
+  <span class="close">&times;</span>
+</div>
+
+
+
+<script>
+  const modal = document.getElementById("popupModal");
+  const modalImg = document.getElementById("popupImage");
+  const closeBtn = document.querySelector(".close");
+  const nextBtn = document.getElementById("nextBtn");
+  const prevBtn = document.getElementById("prevBtn");
+
+  const images = [
+    "aboutme 1.png",
+    "8.jpg",
+    "9.jpg",
+    "10.jpg",
+    "11.jpg"
+  ];
+
+  let currentIndex = 0;
+
+  function showImage(index) {
+    modalImg.classList.remove("show");
+    modalImg.src = images[index];
+
+    // Tambahkan efek fade-in saat gambar dimuat
+    modalImg.onload = () => {
+      requestAnimationFrame(() => {
+        modalImg.classList.add("show");
+      });
+    };
+  }
+
+  document.querySelector(".next-button").addEventListener("click", function(e) {
+    e.preventDefault();
+    currentIndex = 0;
+    showImage(currentIndex);
+    modal.style.display = "flex";
+  });
+
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  window.onclick = function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  nextBtn.onclick = function () {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  };
+
+  prevBtn.onclick = function () {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  };
+</script>
+
+
+
+
+
+</body>
+</html>
+
+
+

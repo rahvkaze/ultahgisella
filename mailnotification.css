@@ -1,0 +1,169 @@
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-image: url('background mail.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px;
+}
+
+/* Kontainer utama */
+.container {
+  position: relative;
+  max-width: 400px;
+}
+
+/* Teks */
+.text h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Amplop dan foto */
+.mail-wrapper {
+  position: relative;
+  margin-top: 30px;
+}
+
+/* Efek glow oranye */
+.glow {
+  position: absolute;
+  left: 0;
+  top: 30px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255,165,0,0.4), transparent 70%);
+  filter: blur(20px);
+  z-index: 0;
+}
+
+/* Amplop */
+.envelope {
+  width: 100%;
+  display: block;
+  z-index: 1;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Polaroid foto */
+.polaroid {
+  position: absolute;
+  top: -90px;
+  right: -30px;
+  width: 170px;
+  transform: rotate(8deg);
+  background: white;
+  padding: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 2;
+}
+
+.polaroid img {
+  width: 100%;
+  display: block;
+}
+
+/* Kertas yang muncul */
+.paper {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  width: 250px;
+  padding: 20px;
+  background: white;
+  color: #333;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.6s ease;
+  z-index: 3;
+  pointer-events: none;
+  display: none;
+  margin: 40px auto 20px;
+  max-width: 90%;
+}
+
+/* Saat kertas aktif muncul */
+.paper.show {
+  top: -250px !important;
+  opacity: 1;
+  pointer-events: auto;
+  display: block;
+}
+
+/* Tombol Next Page di bawah layar */
+#nextPageBtn {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #6a5acd;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: none;
+}
+
+/* Responsif */
+@media (max-width: 480px) {
+  .container {
+    max-width: 90%;
+  }
+
+  .text h1 {
+    font-size: 2rem;
+  }
+
+  .polaroid {
+    width: 130px;
+    top: -70px;
+    right: -20px;
+  }
+
+  .paper {
+    width: 90%;
+    font-size: 14px;
+  }
+
+  #nextPageBtn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+
+.mail-text {
+  position: absolute;
+  top: 60px;
+  left: 40px;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  z-index: 10;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.mail-text h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+}

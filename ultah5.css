@@ -1,0 +1,185 @@
+/* Global */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(to bottom right, #c1c1c1, #000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.music-player {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 400px;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.album-art img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* Player Info (text + controls) */
+.player-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.info {
+    text-align: center;
+}
+
+.info h2 {
+    margin: 5px 0;
+    font-size: 20px;
+}
+
+.info p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.progress {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.progress input[type="range"] {
+    flex-grow: 1;
+}
+
+.controls {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.controls button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.play {
+    font-size: 30px;
+}
+
+.volume input {
+    width: 100%;
+}
+
+.device {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+
+.playlist-card img:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+
+
+
+/* ============== RESPONSIVE LAYOUT ============== */
+
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-decoration: none;
+    background: rgba(255,255,255,0.1);
+    padding: 8px 14px;
+    border-radius: 20px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.back-button:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+
+
+
+@media (min-width: 768px) {
+    .music-player {
+        max-width: 700px;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 30px;
+    }
+
+    .album-art {
+        flex: 1;
+    }
+
+    .album-art img {
+        width: 100%;
+        height: auto;
+    }
+
+    .player-info {
+        flex: 2;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .info {
+        text-align: left;
+    }
+
+    .controls {
+        justify-content: flex-start;
+    }
+
+    .device {
+        text-align: right;
+        width: 100%;
+    }
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url('bg\ All\ Stars\ .jpeg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+* {
+    transition: all 0.3s ease;
+}
